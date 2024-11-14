@@ -4,7 +4,7 @@ from pygame.examples.sprite_texture import event
 
 class Input(object) :
 
-    def __dir__(self):
+    def __init__(self):
         self.quit = False
 
     def update(self):

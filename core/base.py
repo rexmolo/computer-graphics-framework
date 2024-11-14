@@ -7,8 +7,8 @@ class Base(object) :
         # initialize all pygame modules
         pygame.init()
         displayFlags = pygame.DOUBLEBUF | pygame.OPENGL
-        pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLEBUFFERS, 1)
-        pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLESAMPLES, 4)
+        # pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLEBUFFERS, 1)
+        # pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLESAMPLES, 4)
 
         pygame.display.gl_set_attribute(pygame.GL_CONTEXT_PROFILE_MASK, pygame.GL_CONTEXT_PROFILE_CORE)
 
@@ -33,6 +33,8 @@ class Base(object) :
         # main loop
         while self.running:
             # process input
+            if self.input.quit:
+                self.running = False
 
             # update
             self.update()
